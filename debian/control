@@ -1,0 +1,32 @@
+Source: python-slugify
+Section: python
+Priority: optional
+Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
+Uploaders: Hugo Lefeuvre <hle@debian.org>
+Build-Depends: debhelper-compat (= 12),
+               dh-python,
+               python3-all,
+               python3-setuptools,
+               python3-unidecode (>= 1.1.1)
+Standards-Version: 4.4.1
+Testsuite: autopkgtest-pkg-python
+Homepage: https://github.com/un33k/python-slugify
+Vcs-Git: https://salsa.debian.org/python-team/modules/python-slugify.git
+Vcs-Browser: https://salsa.debian.org/python-team/modules/python-slugify
+
+Package: python3-slugify
+Architecture: all
+Depends: python3-unidecode (>= 1.1.1),
+         ${misc:Depends},
+         ${python3:Depends}
+Description: Python module that provides tools for slugifying unicode strings
+ Python module for slugifying unicode strings.
+
+Package: slugify
+Architecture: all
+Section: text
+Depends: python3-slugify,
+         ${misc:Depends},
+         ${python3:Depends}
+Description: Python slugify application that handles unicode
+ Python application that returns slugs from unicode strings.

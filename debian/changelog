@@ -1,0 +1,112 @@
+python-slugify (4.0.0-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Bump Standards-Version to 4.4.1.
+
+  [ Hugo Lefeuvre ]
+  * New upstream release.
+  * Refresh manpage for new upstream release.
+  * Refresh patches for new upstream release.
+  * remove-unidecode-dependency.patch: Fix spelling mistake in description.
+
+ -- Hugo Lefeuvre <hle@debian.org>  Sat, 02 Nov 2019 11:08:01 +0100
+
+python-slugify (3.0.3-1) unstable; urgency=high
+
+  * New upstream release.
+  * Drop Python 2 support.
+  * Patch setup.py to not mention text-unidecode as required dependency
+    (Closes: #933242).
+
+ -- Hugo Lefeuvre <hle@debian.org>  Wed, 31 Jul 2019 20:31:58 +0200
+
+python-slugify (3.0.2-2) unstable; urgency=medium
+
+  * Add missing python{3,}-unidecode binary dependency (Closes: #932732).
+  * Run wrap-and-sort -a.
+
+ -- Hugo Lefeuvre <hle@debian.org>  Mon, 22 Jul 2019 11:47:43 -0300
+
+python-slugify (3.0.2-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Use debhelper-compat instead of debian/compat.
+  * Bump Standards-Version to 4.4.0.
+
+  [ Hugo Lefeuvre ]
+  * New upstream release.
+  * Bump compat to 12.
+
+ -- Hugo Lefeuvre <hle@debian.org>  Sun, 21 Jul 2019 20:27:17 -0300
+
+python-slugify (2.0.1-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Remove ancient X-Python-Version field
+  * d/control: Remove ancient X-Python3-Version field
+  * Convert git repository from git-dpm to gbp layout
+
+  [ Hugo Lefeuvre ]
+  * New upstream release.
+  * debian/control:
+    - Bump Standards-Version to 4.3.0.
+  * debian/copyright:
+    - Update copyright years.
+
+ -- Hugo Lefeuvre <hle@debian.org>  Wed, 30 Jan 2019 19:39:09 +0100
+
+python-slugify (1.2.5-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Set Vcs-* to salsa.debian.org
+
+  [ Hugo Lefeuvre ]
+  * New upstream release.
+  * Bump compat to 11.
+  * Bump debian/watch to version 4.
+  * debian/control:
+    - Bump Standards-Version to 4.1.4.
+    - Update debhelper dependency to >= 11.
+    - Add autopkgtest stanza.
+  * debian/copyright:
+    - Update copyright years.
+  * Update manpage for new upstream release.
+
+ -- Hugo Lefeuvre <hle@debian.org>  Wed, 18 Apr 2018 22:29:07 -0400
+
+python-slugify (1.2.4-2) unstable; urgency=medium
+
+  * Upload to unstable.
+  * Bump compat level from 9 to 10.
+  * debian/control:
+    - Bump Standards-Version to 4.1.0.
+    - Depend on debhelper >= 10 instead of >= 9.
+  * Bump copyright years.
+
+ -- Hugo Lefeuvre <hle@debian.org>  Sun, 24 Sep 2017 23:30:55 +0200
+
+python-slugify (1.2.4-1) experimental; urgency=low
+
+  * New upstream release.
+  * Fix section of binary package slugify (now text).
+
+ -- Hugo Lefeuvre <hle@debian.org>  Wed, 24 May 2017 17:14:31 +0200
+
+python-slugify (1.2.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/control:
+    - Remove useless '(Python 2)' information from the description.
+  * debian/copyright:
+    - Change license from BSD-3-clause to Expat (upstream decision
+      since 1.2.1).
+  * debian/rules:
+    - Run tests during build.
+
+ -- Hugo Lefeuvre <hle@debian.org>  Wed, 21 Dec 2016 12:44:02 +0200
+
+python-slugify (1.2.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #816727)
+
+ -- Hugo Lefeuvre <hle@debian.org>  Tue, 21 Jun 2016 10:06:26 +0200

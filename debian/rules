@@ -1,0 +1,23 @@
+#!/usr/bin/make -f
+
+export PYBUILD_NAME=slugify
+export PYBUILD_DEST_DIR_python3=debian/python3-slugify
+export PYBUILD_DEST_DIR_APP=debian/slugify
+
+%:
+	dh $@  --with python3 --buildsystem=pybuild
+
+override_dh_auto_install:
+	dh_auto_install
+	# Move the python3 application to the application package.
+	mkdir -p $(PYBUILD_DEST_DIR_APP)/usr/bin
+	mv $(PYBUILD_DEST_DIR_python3)/usr/bin/slugify $(PYBUILD_DEST_DIR_APP)/usr/bin
+
+override_dh_installman:
+	# Force dh_installman to install the manpage in the app package
+	dh_installman -p slugify debian/slugify.1
+
+override_dh_auto_test:
+	PYBUILD_SYSTEM=custom \
+	PYBUILD_TEST_ARGS="python{version} test.py" \
+	dh_auto_test
