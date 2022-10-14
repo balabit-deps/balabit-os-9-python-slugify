@@ -1,0 +1,27 @@
+language: python
+dist: xenial
+
+python:
+  - "2.7"
+  - "3.5"
+  - "3.6"
+  - "3.7"
+  - "3.8-dev"
+  - "pypy"
+  - "pypy3"
+
+install:
+  - pip install pip -U
+  - pip install -e .
+  - pip install pycodestyle
+  - pip install coveralls
+  - pip install https://github.com/un33k/pyflakes/tarball/master
+
+before_script:
+  - "bash format.sh"
+  - if [[ $TRAVIS_PYTHON_VERSION == '2.7' ]]; then pyflakes -x W slugify; fi
+
+script: coverage run --source=slugify test.py
+
+after_success:
+  coveralls
